@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Webmaster kit app",
+  "short_name": "Today",
+  "name": "Hacklag Today",
   "icons": [
     {
       "src": "favicon.ico",

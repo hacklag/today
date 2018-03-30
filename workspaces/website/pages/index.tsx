@@ -1,5 +1,5 @@
 import {Head, List, Page, Wrapper} from '@shared/components'
-import {APP_TITLE, UI} from '@shared/config'
+import {APP_TITLE} from '@shared/config'
 import {IStore} from '@website/types'
 import {inject, observer} from 'mobx-react'
 import * as React from 'react'
@@ -24,23 +24,10 @@ class Index extends React.Component<Props> {
         </Head>
 
         <Wrapper>
-          <div className="View">
-            <h1 className="u-mb">Webmaster Kit</h1>
-
-            <List horizontal spacing="sm">
-              {this.isLoggedIn ? this.renderUserNav() : this.renderGuestNav()}
-            </List>
-          </div>
+          <List horizontal spacing="sm">
+            {this.isLoggedIn ? this.renderUserNav() : this.renderGuestNav()}
+          </List>
         </Wrapper>
-
-        <style jsx>{`
-          .View {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 480px;
-            padding: ${UI.spacing} 0;
-          }
-        `}</style>
       </Page>
     )
   }
