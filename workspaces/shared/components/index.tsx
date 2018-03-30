@@ -6,6 +6,7 @@ export {Head} from './head'
 import {LinkProps, NavLinkProps} from 'react-router-dom'
 import {Props as IAvatar} from './avatar'
 import {Props as IButton} from './button'
+import {Props as ICard} from './card'
 import {Props as IFlexLayout} from './flex-layout'
 import {Props as IIcon} from './icon'
 import {Props as IInput} from './input'
@@ -22,6 +23,7 @@ import {Props as IWrapper} from './wrapper'
 export const NavLink: React.ComponentType<NavLinkProps> = loadable(() => import('react-router-dom').then(res => res.NavLink))
 export const Link: React.ComponentType<LinkProps> = loadable(() => import('react-router-dom').then(res => res.Link))
 export const FlexLayout: React.ComponentType<IFlexLayout> = loadable(() => import('./flex-layout').then(res => res.FlexLayout))
+export const Card: React.ComponentType<ICard> = loadable(() => import('./card').then(res => res.Card))
 export const InputList: React.ComponentType<IInputList> = loadable(() => import('./input-list').then(res => res.InputList))
 export const Label: React.ComponentType<ILabel> = loadable(() => import('./label').then(res => res.Label))
 export const List: React.ComponentType<IList> = loadable(() => import('./list').then(res => res.List))

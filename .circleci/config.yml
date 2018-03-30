@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     working_directory: ~/repo
@@ -12,7 +13,6 @@ jobs:
           key: webmasterkit-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - ~/repo
-
   deploy_staging:
     name: Deploy staging
     working_directory: ~/repo
@@ -25,7 +25,6 @@ jobs:
       - run: npx syncano-cli deploy
       - run: npx syncano-cli hosting config website -b true # --cname YOUR_CNAME
       - run: npx syncano-cli hosting sync website
-
   deploy_production:
     name: Deploy production
     working_directory: ~/repo

@@ -12,7 +12,12 @@ export const createStore = (Store: IModelType<{}, {}>, storageKey) => {
   // kill old store to prevent accidental use and run clean up hooks
   if (store) { destroy(store) }
 
-  store = Store.create(snapshot)
+  try {
+    store = Store.create(snapshot)
+  } catch (err) {
+    console.warn(err)
+    store = Store.create()
+  }
 
   if (storageKey) {
     // On every store change, save whole store to localStorage
