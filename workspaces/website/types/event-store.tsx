@@ -19,28 +19,30 @@ export const EventStore = types
       )
     },
     get tomorrowEvents() {
-      const tomorrow = new Date()
-      tomorrow.setDate(tomorrow.getDate() + 1)
+      const now = new Date()
+      now.setDate(now.getDate() + 1) // Add a day
+      const tomorrow = now.toDateString()
 
       return self.events.filter(
-        item => item.startDate.toDateString() === tomorrow.toDateString()
+        item => item.startDate.toDateString() === tomorrow
       )
     },
     get nextEvents() {
       const today = new Date().toDateString()
-      const tomorrow = new Date()
-      tomorrow.setDate(tomorrow.getDate() + 1)
+      const now = new Date()
+      now.setDate(now.getDate() + 1) // Add a day
+      const tomorrow = now.toDateString()
 
       return self.events.filter(item =>
         item.startDate.toDateString() !== today &&
-        item.startDate.toDateString() !== tomorrow.toDateString()
+        item.startDate.toDateString() !== tomorrow
       )
     },
   }))
   .actions(self => ({
     fetchEvents: flow(function * () {
       try {
-        self.pending.set('list', 'true')
+        self.pending.set('list', '')
         self.events = yield syncano('api/event/list')
       } catch (err) {
         throw new Error(err.response.data.message)
