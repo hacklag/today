@@ -11,9 +11,9 @@ export const Typography = () => (
       }
 
 
-      h1 {
-        color: #333;
-        font-weight: 300;
+      h1, h2 {
+        color: ${UI.colors.dark};
+        font-weight: 600;
       }
 
       .u-uppercase { text-transform: uppercase; }

@@ -1,10 +1,17 @@
+import {Link} from '@shared/components'
 import * as React from 'react'
 
-export interface Props extends React.Props<{}> {}
+export interface Props extends React.Props<{}> {
+  href?: string
+}
 
-export const Card = ({children}) => (
+export const Card = ({children, href}: Props) => (
   <div className="Card">
-    {children}
+    {href ? (
+      <Link to={href}>
+        {children}
+      </Link>
+    ) : children}
 
     <style jsx>{`
       .Card {

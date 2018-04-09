@@ -29,6 +29,8 @@ classes:
     - name: sponsor
       type: reference
       target: place
+    - name: offers
+      type: object
     - name: performers
       type: relation
       target: user
@@ -45,8 +47,16 @@ classes:
     - name: attendees
       type: relation
       target: user
+    - name: maximumAttendeeCapacity
+      type: integer
 
 endpoints:
+  event/find:
+    response:
+      success:
+        exit_code: 200
+      fail:
+        exit_code: 400
   event/list:
     response:
       success:

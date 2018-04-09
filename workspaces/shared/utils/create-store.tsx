@@ -11,9 +11,8 @@ export const createStore = (Store: IModelType<{}, {}>, storageKey) => {
   if (snapshotListener) { snapshotListener() }
   // kill old store to prevent accidental use and run clean up hooks
   if (store) { destroy(store) }
-
   try {
-    store = Store.create(snapshot)
+    store = Store.create({} || snapshot)
   } catch (err) {
     console.warn(err)
     store = Store.create()

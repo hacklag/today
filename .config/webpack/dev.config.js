@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const {join} = require('path')
 const merge = require('webpack-merge')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const common = require('./common.config.js')
 
 module.exports = merge(common, {

@@ -16,6 +16,7 @@ class App extends React.Component {
         <React.Fragment>
           <Switch>
             <Route exact path="/" component={Routes.Index} />
+            <Route exact path="/events/:id" component={Routes.Events.Single} />
             <Route exact path="/auth/login" component={Routes.Auth.Login} />
             <Route exact path="/auth/register" component={Routes.Auth.Register} />
             <Route exact path="/auth/logout" component={Routes.Auth.Logout} />
@@ -35,6 +36,9 @@ function getRoutes() {
   return {
     Index: loadable(() => import('./pages/index')),
     Missing: loadable(() => import('./pages/missing')),
+    Events: {
+      Single: loadable(() => import('./pages/events/single')),
+    },
     Auth: {
       Login: loadable(() => import('./pages/auth/login')),
       Logout: loadable(() => import('./pages/auth/logout')),

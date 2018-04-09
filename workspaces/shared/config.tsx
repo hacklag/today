@@ -13,6 +13,7 @@ export const UI = {
     positive: color('#26c344'),
     negative: color('#db2828'),
     // Main text color
+    dark: color('#333'),
     default: color('#56687C'),
     // Meta text color
     meta: color('#999999'),

@@ -36,6 +36,11 @@ class Page extends React.Component<Props> {
               overflow-x: hidden;
               min-height: 100vh;
             }
+
+            img {
+              max-width: 100%;
+              height: auto;
+            }
           `}</style>
         </div>
       </React.Fragment>

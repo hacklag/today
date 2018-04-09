@@ -31,6 +31,7 @@ function getType(props: {
  * @link https://fontawesome.com/how-to-use/js-component-packages
  */
 import {library} from '@fortawesome/fontawesome'
-const faCheckCircle = require('@fortawesome/fontawesome-free-regular/faCheckCircle')
+const faCheckCircle = require('@fortawesome/fontawesome-pro-regular/faCheckCircle')
+const faArrowLeft = require('@fortawesome/fontawesome-pro-regular/faArrowLeft')
 
-library.add(faCheckCircle)
+library.add(faCheckCircle, faArrowLeft)
